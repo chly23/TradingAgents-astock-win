@@ -5,7 +5,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## 项目概述
 基于 [TauricResearch/TradingAgents](https://github.com/TauricResearch/TradingAgents)（65K Stars）的 A 股深度特化 fork。多 Agent 投研框架，7 个 Analyst 角色通过 Bull/Bear 辩论 + 三方风险辩论生成投资报告。
 
-- **仓库**: https://github.com/simonlin1212/TradingAgents-astock
+- **仓库**: https://github.com/chly23/TradingAgents-astock-win
 - **协议**: Apache 2.0
 - **Python**: >=3.10
 - **当前版本**: 0.2.7
@@ -112,5 +112,4 @@ mootdx 锁死 httpx==0.25.2，与 langchain-google-genai 的 httpx>=0.28.1 冲�
 所有 GitHub Issue 的详细记录在 `issues/` 文件夹，包含问题描述、根因分析、修复方案和当前状态。
 
 ## 相关项目
-- [a-stock-data](https://github.com/simonlin1212/a-stock-data) — A 股 MCP 数据服务（Claude Code 用的 skill）
 - 上游 [TauricResearch/TradingAgents](https://github.com/TauricResearch/TradingAgents) — 原版框架

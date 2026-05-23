@@ -196,6 +196,13 @@ class PortfolioDecision(BaseModel):
             "incorporate them; otherwise rely solely on the current analysis."
         ),
     )
+    peg: Optional[float] = Field(
+        default=None,
+        description=(
+            "PEG ratio (Forward PE ÷ EPS CAGR). Extract from the fundamentals "
+            "analyst's report if available; leave null if not reported or not applicable."
+        ),
+    )
     price_target: Optional[float] = Field(
         default=None,
         description="Optional target price in the instrument's quote currency.",
@@ -221,6 +228,8 @@ def render_pm_decision(decision: PortfolioDecision) -> str:
         "",
         f"**Investment Thesis**: {decision.investment_thesis}",
     ]
+    if decision.peg is not None:
+        parts.extend(["", f"**PEG**: {decision.peg:.2f}x"])
     if decision.price_target is not None:
         parts.extend(["", f"**Price Target**: {decision.price_target}"])
     if decision.time_horizon:
